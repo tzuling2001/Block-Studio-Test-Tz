@@ -9,7 +9,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "predeploy": "nuxt generate",
-    "deploy": "gh-pages -d .output/public --clean"
+    "deploy": "gh-pages -d .output/public"
   },
   "dependencies": {
     "gsap": "^3.13.0",
