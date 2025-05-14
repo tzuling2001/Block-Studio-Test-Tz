@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
@@ -6,6 +5,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   components: [{ path: "~/components", pathPrefix: false }],
   app: {
+    baseURL: "/Block-Studio-Test-Tz/",
     head: {
       link: [
         {
