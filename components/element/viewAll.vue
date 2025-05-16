@@ -1,5 +1,5 @@
 <template>
-  <button class="group flex gap-2 w-full pl-[180px]">
+  <button class="group flex gap-2 pl-[180px] pt-[50px]">
     <div
       class="md:w-[64px] md:h-[64px] w-[48px] h-[48px] border border-white rounded-full flex justify-center items-center group-hover:bg-green"
     >

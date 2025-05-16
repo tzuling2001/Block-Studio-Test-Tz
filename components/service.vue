@@ -1,12 +1,13 @@
 <template>
-  <div class="service w-full h-[603px] flex">
+  <div ref="service" class="w-full h-[603px] flex">
     <!-- leftBox -->
     <div
-      class="leftBox w-1/2 h-full bg-black flex flex-col py-[40px] gap-[24px] justify-center"
+      ref="leftBox"
+      class="w-1/2 h-full bg-black flex flex-col py-[40px] gap-[24px] justify-center"
     >
       <!-- svg -->
       <div class="svg w-full py-[10px] flex justify-center">
-        <div class="w-[145px] h-[200px] bg-green"></div>
+        <pointSvg />
       </div>
       <!-- textBox -->
       <div class="textBox">
@@ -29,7 +30,8 @@
 
     <!-- rightBox -->
     <div
-      class="rightBox w-1/2 h-full bg-black flex flex-col py-[40px] gap-[28px] justify-center border-l border-green"
+      ref="rightBox"
+      class="w-1/2 h-full bg-black flex flex-col py-[40px] gap-[28px] justify-center border-l border-green"
     >
       <!-- textBox -->
       <div class="textBox">
@@ -53,8 +55,42 @@
       </div>
       <!-- svg -->
       <div class="svg w-full flex justify-center">
-        <div class="w-[200px] h-[200px] bg-green"></div>
+        <!-- <div class="w-[200px] h-[200px] bg-green"></div> -->
+        <faceSvg />
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, ref, nextTick } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const service = ref(null);
+const leftBox = ref(null);
+const rightBox = ref(null);
+
+onMounted(async () => {
+  await nextTick();
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: service.value,
+      start: "top 80%",
+      end: "top center", // 滾動區間長度
+      scrub: true,
+    },
+    defaults: { ease: "power2.out" },
+  });
+
+  tl.from(leftBox.value, {
+    opacity: 0,
+  }).from(rightBox.value, {
+    x: 100,
+    opacity: 0,
+  });
+});
+</script>

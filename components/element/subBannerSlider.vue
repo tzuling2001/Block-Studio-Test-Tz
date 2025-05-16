@@ -1,12 +1,17 @@
 <template>
-  <div class="bannerSlider relative w-[52vw] h-[519px] overflow-hidden">
+  <div
+    class="bannerSlider relative w-[503px] h-[417px] overflow-hidden flex content-center"
+  >
     <div
       v-for="(image, i) in images"
       :key="i"
       ref="slides"
-      class="absolute top-0 left-0 w-full h-full object-cover"
+      class="absolute w-full h-full"
     >
-      <img :src="image" class="w-full h-full object-cover" />
+      <img
+        :src="image"
+        class="w-full scale-[2] -translate-x-[-40px] -translate-y-[250px]"
+      />
     </div>
   </div>
 </template>
@@ -15,7 +20,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
 
-const images = ["/images/car.png", "/images/people.png"];
+const images = ["/images/car.jpg", "/images/boy.jpg"];
 const slides = ref([]);
 const currentImg = ref(0);
 let intervalId = null;

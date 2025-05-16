@@ -1,5 +1,5 @@
 <template>
-  <div class="Marquee w-full py-5 bg-cream overflow-hidden">
+  <div class="Marquee w-full py-10 bg-cream overflow-hidden">
     <div ref="topRef" class="py-5 whitespace-nowrap flex">
       <div
         v-for="i in 2"

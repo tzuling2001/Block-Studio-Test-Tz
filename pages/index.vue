@@ -5,26 +5,7 @@
     >
       <section id="home">
         <homeBanner />
-        <!-- viewAll -->
-        <div
-          class="viewAll w-full h-[320px] bg-black flex items-center relative mt-[25px]"
-        >
-          <viewAll />
-          <!-- p-content -->
-          <div
-            class="font-content text-D/B2 text-white w-[474px] absolute top-[30px] left-[50px]"
-          >
-            Sit elit incididunt Lorem minim ea pariatur anim dolor ut veniam
-            amet ad. Ipsum tempor commodo ullamco Lorem incididunt proidtation
-            ea esse velit tempor culpa.
-          </div>
-          <!-- title-second-line -->
-          <div
-            class="title-third-line absolute top-[20px] right-[-80px] font-content text-D/DIS0 text-red"
-          >
-            Movie
-          </div>
-        </div>
+        <viewBox />
       </section>
 
       <section id="story">
@@ -37,6 +18,14 @@
 
       <section id="marquee">
         <marquee />
+      </section>
+
+      <section id="gallery" class="w-full flex justify-center">
+        <gallery />
+      </section>
+
+      <section id="callMe">
+        <callMe />
       </section>
     </div>
   </clientOnly>
