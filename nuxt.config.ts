@@ -6,7 +6,7 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   components: [{ path: "~/components", pathPrefix: false }],
   app: {
-    baseURL: "/",
+    baseURL: "/Block-Studio-Test-Tz/",
     head: {
       link: [
         {

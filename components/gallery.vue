@@ -17,12 +17,12 @@
       </h1>
       <div class="photoBox w-full flex gap-5 items-end justify-end">
         <card
-          image="/images/D:Gallery-car.png"
+          image="/image/D:Gallery-car.png"
           year="1997"
           author="christopher fairbank"
         />
         <card
-          image="/images/D:Gallery-statue.png"
+          image="/image/D:Gallery-statue.png"
           year="1997"
           author="christopher fairbank"
         />
@@ -43,19 +43,19 @@
       </h1>
       <div class="photoBoxRight w-full flex gap-5 items-start justify-end">
         <card
-          image="/images/D:Gallery-book.png"
+          image="/image/D:Gallery-book.png"
           year="1997"
           author="christopher fairbank"
         />
         <card
-          image="/images/D:Gallery-tv.png"
+          image="/image/D:Gallery-tv.png"
           year="1997"
           author="christopher fairbank"
         />
       </div>
       <div class="photoBoxLeft absolute left-0 top-[-70px]">
         <card
-          image="/images/D:Gallery-girl.png"
+          image="/image/D:Gallery-girl.png"
           year="1997"
           author="christopher fairbank"
         />
@@ -71,12 +71,12 @@
       </h1>
       <div class="photoBox w-full flex gap-5 items-end justify-end pr-[360px]">
         <card
-          image="/images/D:Gallery-heel.png"
+          image="/image/D:Gallery-heel.png"
           year="1997"
           author="christopher fairbank"
         />
         <card
-          image="/images/D:Gallery-mouse.png"
+          image="/image/D:Gallery-mouse.png"
           year="1997"
           author="christopher fairbank"
         />
@@ -92,7 +92,7 @@
       </h1>
       <div class="photoBox w-full flex gap-5 items-end justify-end">
         <card
-          image="/images/D:Gallery-boy.png"
+          image="/image/D:Gallery-boy.png"
           year="1997"
           author="christopher fairbank"
         />

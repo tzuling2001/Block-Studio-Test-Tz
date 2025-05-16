@@ -15,7 +15,7 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import gsap from "gsap";
 
-const images = ["/images/banner-car.png", "/images/banner-boy.png"];
+const images = ["/image/banner-car.png", "/image/banner-boy.png"];
 const slides = ref([]);
 const currentImg = ref(0);
 let intervalId = null;
