@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  ssr: false, // 設置為靜態生成
+  ssr: false,
   compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
   css: ["@/assets/tailwind.css", "@/assets/scss/main.scss"],
