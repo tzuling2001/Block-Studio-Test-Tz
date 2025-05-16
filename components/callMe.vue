@@ -20,7 +20,7 @@
 
       <div class="w-[1326px] h-[445px] relative">
         <img
-          src="@/public/images/callMe.png"
+          src="../public/images/callMe.png"
           class="relative z-10 w-[1326px] h-[480px] mix-blend-difference"
         />
       </div>
