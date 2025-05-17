@@ -73,9 +73,7 @@ const service = ref(null);
 const leftBox = ref(null);
 const rightBox = ref(null);
 
-onMounted(async () => {
-  await nextTick();
-
+onMounted(() => {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: service.value,

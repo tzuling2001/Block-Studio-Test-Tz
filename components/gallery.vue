@@ -1,21 +1,19 @@
 <template>
   <div class="w-[1300px] relative bg-black">
-    <!-- title -->
+    <!-- section 01 -->
     <div
-      class="font-content text-D/H3 text-white absolute top-[200px] left-[50px]"
+      class="sectionTitle font-content text-D/H3 text-white absolute top-[100px] left-[50px]"
     >
-      <h1>SUMMER</h1>
-      <h1>COLLECTION</h1>
+      <subTitle text="SUMMER" />
+      <subTitle text="COLLECTION" />
     </div>
 
-    <!-- section 01 -->
-    <section class="w-full mt-[200px]">
-      <h1
-        class="font-content text-D/H3 text-white w-full pr-[350px] pb-10 text-end"
-      >
-        SECTION 01
-      </h1>
-      <div class="photoBox w-full flex gap-5 items-end justify-end">
+    <!-- title -->
+    <div class="sectionBox w-full relative">
+      <div class="w-full pr-[350px] pb-10 text-end mt-[100px]">
+        <subTitle text="SECTION 01" />
+      </div>
+      <div ref="photoBox" class="w-full flex gap-5 items-end justify-end">
         <card
           image="/image/D:Gallery-car.png"
           year="1997"
@@ -27,7 +25,7 @@
           author="christopher fairbank"
         />
       </div>
-    </section>
+    </div>
 
     <!-- main Gallery title -->
     <div class="w-full py-5 flex justify-center">
@@ -35,12 +33,10 @@
     </div>
 
     <!-- section 02 -->
-    <section class="w-full mt-[60px] relative">
-      <h1
-        class="font-content text-D/H3 text-white w-full pr-[350px] pb-10 text-end"
-      >
-        SECTION 02
-      </h1>
+    <div class="sectionBox w-full mt-[60px] relative">
+      <div class="w-full pr-[350px] pb-10 text-end">
+        <subTitle text="SECTION 02" />
+      </div>
       <div class="photoBoxRight w-full flex gap-5 items-start justify-end">
         <card
           image="/image/D:Gallery-book.png"
@@ -60,15 +56,13 @@
           author="christopher fairbank"
         />
       </div>
-    </section>
+    </div>
 
     <!-- section 03 -->
-    <section class="w-full mt-[20px]">
-      <h1
-        class="font-content text-D/H3 text-white w-full pl-[280px] pb-10 text-start"
-      >
-        SECTION 03
-      </h1>
+    <div class="sectionBox w-full mt-[20px]">
+      <div class="w-full pl-[280px] pb-10 text-start">
+        <subTitle text="SECTION 03" />
+      </div>
       <div class="photoBox w-full flex gap-5 items-end justify-end pr-[360px]">
         <card
           image="/image/D:Gallery-heel.png"
@@ -81,15 +75,13 @@
           author="christopher fairbank"
         />
       </div>
-    </section>
+    </div>
 
     <!-- section 04 -->
-    <section class="w-full mt-[120px]">
-      <h1
-        class="font-content text-D/H3 text-white w-full pl-[280px] pb-10 text-start"
-      >
-        SECTION 04
-      </h1>
+    <div class="sectionBox w-full mt-[120px]">
+      <div class="w-full pl-[280px] pb-10 text-start">
+        <subTitle text="SECTION 04" />
+      </div>
       <div class="photoBox w-full flex gap-5 items-end justify-end">
         <card
           image="/image/D:Gallery-boy.png"
@@ -97,6 +89,14 @@
           author="christopher fairbank"
         />
       </div>
-    </section>
+    </div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, nextTick, onUnmounted } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+</script>
