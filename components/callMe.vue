@@ -90,7 +90,7 @@ onMounted(async () => {
     scrollTrigger: {
       trigger: contactRef.value,
       start: "top 80%",
-      end: "+=800", // 滾動區間長度
+      end: "+=800",
       scrub: true,
     },
     defaults: { ease: "power2.out" },
@@ -99,13 +99,21 @@ onMounted(async () => {
     opacity: 0,
     y: 100,
   })
-    .from(callRef.value, {
-      opacity: 0,
-      x: 100,
-    })
-    .from(meRef.value, {
-      opacity: 0,
-      y: 100,
-    });
+    .from(
+      callRef.value,
+      {
+        opacity: 0,
+        x: 100,
+      },
+      "+1"
+    )
+    .from(
+      meRef.value,
+      {
+        opacity: 0,
+        y: 100,
+      },
+      "+1"
+    );
 });
 </script>

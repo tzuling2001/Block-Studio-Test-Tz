@@ -1,7 +1,10 @@
 <template>
   <div class="lg:w-[1300px] w-full relative bg-black lg:flex flex-col px-5">
     <!-- title -->
-    <div ref="titleBox" class="lg:absolute top-[100px] left-[50px]">
+    <div
+      ref="titleBox"
+      class="absolute lg:top-[100px] lg:left-[50px] top-[180px] left-5"
+    >
       <subTitle text="SUMMER" />
       <subTitle text="COLLECTION" />
     </div>

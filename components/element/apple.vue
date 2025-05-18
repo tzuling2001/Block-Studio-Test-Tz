@@ -64,7 +64,7 @@ onMounted(() => {
               linewidth: 5,
             })
           );
-          child.add(line); // 或 scene.add(line) 根據需求
+          child.add(line); // 備註： scene.add(line)
         }
       });
 

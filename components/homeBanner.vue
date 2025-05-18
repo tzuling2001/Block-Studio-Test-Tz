@@ -99,17 +99,21 @@ const handleMouse = (e) => {
 // =======
 
 onMounted(() => {
-  gsap.from(titleFirst.value, {
-    x: -100,
-    opacity: 0,
-    duration: 1,
-  });
+  gsap.from(
+    [titleFirst.value, titleBox.value],
+    {
+      x: -100,
+      opacity: 0,
+      duration: 1,
+    },
+    "+1.5"
+  );
 
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: bannerBox.value,
       start: "top top",
-      end: "+=1000", // 滾動區間長度
+      end: "+=1000",
       pin: true,
       scrub: true,
     },
@@ -126,7 +130,7 @@ onMounted(() => {
     "0.5"
   )
     .from(
-      [titleSecond.value, titleBox.value],
+      titleSecond.value,
       {
         opacity: 0,
         y: 30,
