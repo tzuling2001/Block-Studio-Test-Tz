@@ -18,7 +18,7 @@
     <div class="D-photoGroup flex flex-col items-center mt-[100px] gap-10">
       <!-- section 01 -->
       <div class="w-full relative flex flex-col">
-        <div class="lg:pr-[350px] pb-10 lg:text-end text-start">
+        <div class="lg:pr-[310px] pb-10 lg:text-end text-start">
           <subTitle text="SECTION 01" />
         </div>
         <div
@@ -67,7 +67,7 @@
 
       <!-- section 03 -->
       <div class="w-full lg:mt-[20px]">
-        <div class="lg:pl-[280px] pb-10 text-start">
+        <div class="lg:pl-[240px] pb-10 text-start">
           <subTitle text="SECTION 03" />
         </div>
         <div
@@ -88,7 +88,7 @@
 
       <!-- section 04 -->
       <div class="w-full lg:mt-[120px]">
-        <div class="w-full lg:pl-[280px] pb-10 text-start">
+        <div class="w-full lg:pl-[240px] pb-10 text-start">
           <subTitle text="SECTION 04" />
         </div>
         <div class="w-full flex gap-5 items-end lg:justify-end justify-center">
@@ -100,29 +100,6 @@
         </div>
       </div>
     </div>
-
-    <!-- M-photoGroup -->
-    <!-- <div class="M-photoGroup w-full lg:hidden flex flex-col items-center gap-5">
-      <card image="/image/car.jpg" year="1997" author="christopher fairbank" />
-      <card
-        image="/image/statue.jpg"
-        year="1997"
-        author="christopher fairbank"
-      />
-      <card
-        image="/image/callMe.png"
-        year="1997"
-        author="christopher fairbank"
-      />
-      <card image="/image/book.jpg" year="1997" author="christopher fairbank" />
-      <card image="/image/tv.jpg" year="1997" author="christopher fairbank" />
-      <card
-        image="/image/mouse.jpg"
-        year="1997"
-        author="christopher fairbank"
-      />
-      <card image="/image/boy.jpg" year="1997" author="christopher fairbank" />
-    </div> -->
   </div>
 </template>
 

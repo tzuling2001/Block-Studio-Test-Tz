@@ -59,8 +59,8 @@ onMounted(() => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: wrapper.value,
-      start: "top 80%",
-      end: "top center",
+      start: "top 90%",
+      end: "top 60%",
       scrub: true,
     },
   });

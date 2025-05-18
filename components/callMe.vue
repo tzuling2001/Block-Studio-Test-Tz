@@ -1,9 +1,9 @@
 <template>
   <div
-    ref="callBoxRef"
+    ref="contactRef"
     class="flex flex-col justify-center items-center bg-black mt-32"
   >
-    <titleText text="Contact" textColor="text-white" />
+    <titleText text="Contact" textColor="text-white" fontSize="text-M/DIS1" />
     <h2 class="font-logo text-D/H2 text-red mt-10">+339 566 789</h2>
 
     <!-- photoBox -->
@@ -21,28 +21,30 @@
         class="pointer-events-none absolute w-[200px] h-[200px] rounded-full bg-white opacity-70 transition-opacity duration-300 delay-0.5 z-0"
       ></div>
 
-      <div class="w-[1326px] h-[445px] relative">
+      <div
+        class="lg:w-[1326px] lg:h-[445px] w-[360px] h-[276px] relative overflow-hidden"
+      >
         <img
           src="/image/callMe.png"
-          class="relative z-10 w-[1326px] h-[480px] mix-blend-difference"
+          class="relative z-10 w-full h-full object-cover mix-blend-difference"
         />
       </div>
     </div>
 
     <!-- contentBox -->
     <div class="contentBox relative w-full flex justify-center">
-      <div ref="contentRef" class="w-[474px] pt-[20px] pb-[120px] text-center">
+      <div class="w-[474px] pt-[20px] pb-[120px] text-center">
         <AnimatedText>
           Sit elit incididunt Lorem minim ea pariatur anim dolor ut veniam amet
           ad. Ipsum tempor commodo ullamco Lorem incididunt proidtation ea esse
           velit tempor culpa.
         </AnimatedText>
       </div>
-      <div class="absolute right-[-110px] top-[-210px] z-10">
-        <titleText text="CALL" textColor="text-white" />
+      <div ref="callRef" class="absolute right-[-110px] top-[-210px] z-10">
+        <titleText text="CALL" textColor="text-white " fontSize="text-M/DIS1" />
       </div>
-      <div class="absolute left-[-20px] bottom-[-15px]">
-        <titleText text="ME" textColor="text-white" />
+      <div ref="meRef" class="absolute left-[-20px] bottom-[-15px]">
+        <titleText text="ME" textColor="text-white" fontSize="text-M/DIS1" />
       </div>
     </div>
   </div>
@@ -73,22 +75,34 @@ const handleMouse = (e) => {
 // ======
 // 動畫
 // ======
-const ContactRef = ref(null);
 
-const callBoxRef = ref(null);
+const contactRef = ref(null);
+const callRef = ref(null);
+const meRef = ref(null);
 
-// onMounted(async () => {
-//   await nextTick();
+onMounted(async () => {
+  await nextTick();
 
-//   const tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: callBoxRef.value,
-//       start: "top top",
-//       end: "+=1000", // 滾動區間長度
-//       pin: true,
-//       scrub: true,
-//     },
-//     defaults: { ease: "power2.out" },
-//   });
-// });
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: contactRef.value,
+      start: "top 80%",
+      end: "+=800", // 滾動區間長度
+      scrub: true,
+    },
+    defaults: { ease: "power2.out" },
+  });
+  tl.from(contactRef.value, {
+    opacity: 0,
+    y: 100,
+  })
+    .from(callRef.value, {
+      opacity: 0,
+      x: 100,
+    })
+    .from(meRef.value, {
+      opacity: 0,
+      y: 100,
+    });
+});
 </script>
