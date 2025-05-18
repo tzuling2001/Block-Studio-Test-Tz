@@ -6,7 +6,7 @@
     <!-- apple -->
     <div
       ref="appleRef"
-      class="w-full absolute lg:top-0 lg:left-0 top-20 z-50 mix-blend-color flex items-center justify-center"
+      class="w-full absolute lg:top-0 lg:left-0 top-20 z-40 mix-blend-color flex items-center justify-center"
     >
       <Apple />
     </div>

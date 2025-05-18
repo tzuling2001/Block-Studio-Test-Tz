@@ -3,16 +3,16 @@
     <div
       class="index w-full flex flex-col justify-center relative overflow-hidden"
     >
-      <section id="home">
+      <section id="top" class="scroll-mt-[80px]">
         <homeBanner />
         <viewBox />
       </section>
 
-      <section id="story">
+      <section id="story" class="scroll-mt-[80px]">
         <story />
       </section>
 
-      <section id="service">
+      <section id="service" class="scroll-mt-[80px]">
         <service />
       </section>
 
@@ -20,11 +20,11 @@
         <marquee />
       </section>
 
-      <section id="gallery" class="w-full flex justify-center">
+      <section id="gallery" class="w-full flex justify-center scroll-mt-[80px]">
         <gallery />
       </section>
 
-      <section id="callMe">
+      <section id="contact" class="scroll-mt-[80px]">
         <callMe />
       </section>
     </div>

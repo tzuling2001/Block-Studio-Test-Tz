@@ -11,6 +11,7 @@
     <template v-for="(item, i) in items" :key="item.text">
       <button
         class="group font-content text-D/NAV text-black hover:text-green flex items-center"
+        @click="scrollToSection(item.targetId)"
       >
         <span v-if="item.icon === 'phone'">
           <svg
@@ -42,8 +43,8 @@
   </div>
 
   <!-- 展開選單 -->
-  <div
-    v-if="isOpen"
+  <!-- <div
+    v-show="isOpen"
     class="fixed inset-0 bg-white flex flex-col items-center justify-center z-40 md:hidden transition-opacity"
   >
     <template v-for="(item, i) in items" :key="item.text">
@@ -54,7 +55,7 @@
         {{ item.text }}
       </button>
     </template>
-  </div>
+  </div> -->
 </template>
 
 <script setup>
@@ -64,9 +65,17 @@ import Hamburger from "./hamburger.vue";
 const isOpen = ref(false);
 
 const items = [
-  { text: "About" },
-  { text: "Story" },
-  { text: "Gallery" },
-  { text: "Contact", icon: "phone" },
+  { text: "Home", targetId: "top" },
+  { text: "Story", targetId: "story" },
+  { text: "Gallery", targetId: "gallery" },
+  { text: "Contact", icon: "phone", targetId: "contact" },
 ];
+
+function scrollToSection(id) {
+  const target = document.getElementById(id);
+  if (target) {
+    target.scrollIntoView({ behavior: "smooth" });
+    isOpen.value = false;
+  }
+}
 </script>
