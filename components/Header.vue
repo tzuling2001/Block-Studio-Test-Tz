@@ -1,9 +1,14 @@
 <template>
-  <div ref="header" class="w-full h-[86.55px] fixed top-0 left-0 z-50">
-    <div class="absolute bottom-[15px] left-[55px]">
+  <div
+    ref="header"
+    class="w-full lg:h-[86.55px] h-[58px] fixed top-0 left-0 z-50 flex justify-between items-end lg:px-[48px] px-[24px]"
+  >
+    <div class="py-1">
       <logo textColor="text-white" hoverColor="hover:text-green" />
     </div>
-    <Menu />
+    <div class="">
+      <Menu />
+    </div>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <button
-      class="font-logo text-D/H3 transition-colors duration-300"
+      class="font-logo lg:text-D/H3 text-D/B2 transition-colors duration-300"
       :class="[textColor, hoverColor]"
     >
       ZOENW

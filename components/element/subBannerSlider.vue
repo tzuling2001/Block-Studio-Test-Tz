@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bannerSlider relative w-[503px] h-[417px] overflow-hidden flex content-center"
+    class="bannerSlider relative lg:w-[503px] lg:h-[417px] w-[194px] h-[161px] overflow-hidden flex content-center"
   >
     <div
       v-for="(image, i) in images"

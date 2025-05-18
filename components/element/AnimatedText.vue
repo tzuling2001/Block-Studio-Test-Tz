@@ -1,6 +1,9 @@
 <template>
   <div class="overflow-hidden" ref="wrapper">
-    <h2 class="font-content text-D/NAV leading-relaxed" :class="textColor">
+    <h2
+      class="font-content lg:text-D/NAV text-[12px] leading-relaxed"
+      :class="textColor"
+    >
       <span
         v-for="(word, i) in splitText"
         :key="i"
@@ -56,7 +59,7 @@ onMounted(() => {
     ease: "power2.out",
     scrollTrigger: {
       trigger: wrapper.value,
-      start: "top 100%",
+      start: "top 80%",
       end: "top center",
       scrub: true,
     },

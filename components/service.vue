@@ -1,5 +1,5 @@
 <template>
-  <div ref="service" class="w-full h-[603px] flex">
+  <div ref="service" class="w-full h-[603px] lg:flex hidden">
     <!-- leftBox -->
     <div
       ref="leftBox"
@@ -60,12 +60,18 @@
       </div>
     </div>
   </div>
+
+  <!-- mobile -->
+  <div class="w-full lg:hidden flex overflow-hidden">
+    <MobileService />
+  </div>
 </template>
 
 <script setup>
 import { onMounted, ref, nextTick } from "vue";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import MobileService from "./mobileService.vue";
 
 gsap.registerPlugin(ScrollTrigger);
 

@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col justify-center items-center bg-black mt-32">
+  <div
+    ref="callBoxRef"
+    class="flex flex-col justify-center items-center bg-black mt-32"
+  >
     <titleText text="Contact" textColor="text-white" />
     <h2 class="font-logo text-D/H2 text-red mt-10">+339 566 789</h2>
 
@@ -46,7 +49,11 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, nextTick } from "vue";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const showCursor = ref(false);
 const cursorStyle = ref({});
@@ -62,4 +69,26 @@ const handleMouse = (e) => {
     left: `${x}px`,
   };
 };
+
+// ======
+// 動畫
+// ======
+const ContactRef = ref(null);
+
+const callBoxRef = ref(null);
+
+// onMounted(async () => {
+//   await nextTick();
+
+//   const tl = gsap.timeline({
+//     scrollTrigger: {
+//       trigger: callBoxRef.value,
+//       start: "top top",
+//       end: "+=1000", // 滾動區間長度
+//       pin: true,
+//       scrub: true,
+//     },
+//     defaults: { ease: "power2.out" },
+//   });
+// });
 </script>

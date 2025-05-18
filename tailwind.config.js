@@ -12,7 +12,7 @@ export default {
         "D/H3": ["28px", { lineHeight: "0.9" }],
         "D/B1": ["20px", { lineHeight: "0.9" }],
         "D/B2": ["16px", { lineHeight: "1.2" }],
-        "D/NAV": ["16px", { lineHeight: "1" }],
+        "D/NAV": ["16px", { lineHeight: "1.5" }],
         "D/DIS2": ["120px", { lineHeight: "0.8" }],
         "D/DIS1": ["300px", { lineHeight: "0.8" }],
         "D/DIS0": ["280px", { lineHeight: "0.8" }],
@@ -21,10 +21,6 @@ export default {
         "M/DIS2": ["64px", { lineHeight: "0.8" }],
         "M/DIS1": ["150px", { lineHeight: "0.8" }],
         "M/DIS0": ["64px", { lineHeight: "0.8" }],
-      },
-      screens: {
-        md: "360px",
-        lg: "1440px",
       },
       colors: {
         red: "#E01111",

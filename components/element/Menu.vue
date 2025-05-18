@@ -1,6 +1,12 @@
 <template>
+  <!-- Ｍ - 漢堡 -->
+  <div class="lg:hidden">
+    <Hamburger />
+  </div>
+
+  <!-- D - 一般 -->
   <div
-    class="menu w-[408px] h-[54.55px] bg-white rounded-full absolute bottom-0 right-[70px] content-center flex justify-center"
+    class="menu w-[408px] h-[54.55px] bg-white rounded-full lg:flex content-center justify-center hidden"
   >
     <template v-for="(item, i) in items" :key="item.text">
       <button
@@ -34,9 +40,29 @@
       </button>
     </template>
   </div>
+
+  <!-- 展開選單 -->
+  <div
+    v-if="isOpen"
+    class="fixed inset-0 bg-white flex flex-col items-center justify-center z-40 md:hidden transition-opacity"
+  >
+    <template v-for="(item, i) in items" :key="item.text">
+      <button
+        class="text-xl font-content py-4 text-black hover:text-green"
+        @click="isOpen = false"
+      >
+        {{ item.text }}
+      </button>
+    </template>
+  </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import Hamburger from "./hamburger.vue";
+
+const isOpen = ref(false);
+
 const items = [
   { text: "About" },
   { text: "Story" },

@@ -1,10 +1,10 @@
 <template>
-  <div class="Marquee w-full py-10 bg-cream overflow-hidden">
+  <div class="Marquee w-full lg:py-10 py-1 bg-cream overflow-hidden">
     <div ref="topRef" class="py-5 whitespace-nowrap flex">
       <div
         v-for="i in 2"
         :key="i"
-        class="flex gap-10 font-content text-D/DIS2 text-yellow"
+        class="flex gap-10 font-content lg:text-D/DIS2 text-M/DIS2 text-yellow"
       >
         <div v-for="(word, j) in words" :key="j" class="flex gap-5">
           <h1>{{ word }}</h1>
@@ -16,7 +16,7 @@
       <div
         v-for="i in 2"
         :key="i"
-        class="flex gap-10 font-content text-D/DIS2 text-yellow"
+        class="flex gap-10 font-content lg:text-D/DIS2 text-M/DIS2 text-yellow"
       >
         <div v-for="(word, j) in words" :key="j" class="flex gap-5">
           <h1>{{ word }}</h1>

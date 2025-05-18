@@ -3,7 +3,7 @@
   <div
     v-if="showCursor"
     :style="cursorStyle"
-    class="pointer-events-none fixed py-14 px-10 rounded-full bg-white opacity-70 transition-opacity duration-300 z-50"
+    class="pointer-events-none fixed lg:py-14 lg:px-10 py-10 px-6 rounded-full bg-white opacity-70 transition-opacity duration-300 z-50"
   >
     SCROLL
   </div>
@@ -11,31 +11,53 @@
   <!-- main - content -->
   <div
     ref="bannerBox"
-    class="bannerBox w-full relative flex flex-col min-h-[780px] justify-end"
+    class="bannerBox w-full relative flex flex-col lg:min-h-[780px] min-h-[516px] justify-end"
     @mousemove="handleMouse"
     @mouseenter="showCursor = true"
     @mouseleave="showCursor = false"
   >
+    <!-- sliderBox - main -->
+    <div
+      ref="mainSlider"
+      class="relative w-full flex lg:justify-center -left-[50px] z-10"
+    >
+      <bannerSlider />
+    </div>
+
     <!-- sliderBox - sub -->
-    <div ref="subSlider" class="absolute right-[70px] top-[120px]">
+    <div
+      ref="subSlider"
+      class="absolute lg:right-[70px] lg:top-[120px] -right-[50px] top-[80px] z-0"
+    >
       <subBannerSlider />
     </div>
 
-    <!-- title-first-line -->
-    <div ref="titleFirst" class="w-full flex absolute top-[140px] left-[-41px]">
-      <titleText text="1976" textColor="text-red" />
-      <span class="absolute right-[-70px]">
+    <!-- D / title-first-line -->
+    <div
+      ref="titleFirst"
+      class="w-full lg:flex hidden absolute lg:top-[140px] lg:left-[-41px]"
+    >
+      <titleText text="1976--" textColor="text-red" />
+      <span class="lg:absolute right-[-70px]">
         <titleText text="Mazda" textColor="text-red" />
       </span>
     </div>
 
-    <!-- sliderBox - main -->
-    <div ref="mainSlider" class="relative w-full flex justify-center">
-      <bannerSlider />
+    <!-- D / title-second-line -->
+    <div
+      ref="titleSecond"
+      class="w-full lg:flex hidden absolute top-[390px] left-[-41px] z-20"
+    >
+      <titleText text="RX7s" textColor="text-red" />
     </div>
 
-    <!-- title-second-line -->
-    <div ref="titleSecond" class="w-full absolute top-[390px] left-[-41px]">
+    <!-- M / titleLine -->
+    <div
+      ref="titleBox"
+      class="w-full flex flex-col lg:hidden absolute top-[75px] left-[20px] z-20"
+    >
+      <titleText text="1976--" textColor="text-red" />
+      <titleText text="Mazda" textColor="text-red" />
       <titleText text="RX7s" textColor="text-red" />
     </div>
   </div>
@@ -49,10 +71,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const bannerBox = ref(null);
+const mainSlider = ref(null);
 const subSlider = ref(null);
 const titleFirst = ref(null);
-const mainSlider = ref(null);
 const titleSecond = ref(null);
+const titleBox = ref(null);
 const showCursor = ref(false);
 const cursorStyle = ref({});
 
@@ -103,7 +126,7 @@ onMounted(() => {
     "0.5"
   )
     .from(
-      titleSecond.value,
+      [titleSecond.value, titleBox.value],
       {
         opacity: 0,
         y: 30,

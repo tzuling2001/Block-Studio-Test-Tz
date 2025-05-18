@@ -1,5 +1,7 @@
 <template>
-  <div class="bannerSlider relative w-[52vw] h-[519px] overflow-hidden">
+  <div
+    class="bannerSlider relative lg:w-[746px] lg:h-[519px] w-[333px] h-[338px] overflow-hidden"
+  >
     <div
       v-for="(image, i) in images"
       :key="i"
@@ -55,8 +57,4 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped>
-/* img {
-  transition: opacity 0.5s; // 散爍問題
-} */
-</style>
+<style scoped></style>
