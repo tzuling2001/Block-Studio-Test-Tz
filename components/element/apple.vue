@@ -1,16 +1,18 @@
 <template>
-  <!-- 畫布：Three.js 渲染場景的容器 -->
-  <canvas ref="canvas" class="lg:w-2/5 lg:h-[417px] w-full h-[417px] block" />
+  <canvas ref="canvas" class="lg:w-2/5 lg:h-[417px] h-[300px] w-full block" />
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
 import * as THREE from "three";
 import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader.js";
+import { EdgesGeometry } from "three";
+import { LineSegments } from "three";
+import { LineBasicMaterial } from "three";
 import gsap from "gsap";
 
 const canvas = ref(null);
-const readyToTrack = ref(false); // ✅ 控制何時啟用追蹤
+const readyToTrack = ref(false);
 
 onMounted(() => {
   const scene = new THREE.Scene();
@@ -20,7 +22,7 @@ onMounted(() => {
     0.1,
     1000
   );
-  let zoom = 10;
+  let zoom = 5;
   camera.position.set(0, 1, zoom);
 
   const renderer = new THREE.WebGLRenderer({
@@ -46,13 +48,23 @@ onMounted(() => {
 
       obj.traverse((child) => {
         if (child.isMesh) {
+          // 顏色材質
           child.material = new THREE.MeshStandardMaterial({
             color: 0xe01111,
-            roughness: 1,
-            metalness: 0.3,
             transparent: true,
-            opacity: 1,
+            opacity: 0.8,
           });
+
+          // Mesh 加粗
+          const edges = new EdgesGeometry(child.geometry);
+          const line = new LineSegments(
+            edges,
+            new LineBasicMaterial({
+              color: 0x288e3e,
+              linewidth: 5,
+            })
+          );
+          child.add(line); // 或 scene.add(line) 根據需求
         }
       });
 
@@ -71,11 +83,10 @@ onMounted(() => {
         duration: 1.5,
         ease: "power2.out",
         onComplete: () => {
-          readyToTrack.value = true; // ✅ 動畫完成後啟用滑鼠追蹤
+          readyToTrack.value = true;
         },
       });
 
-      // 滑鼠移動控制（延遲啟用）
       window.addEventListener("mousemove", (event) => {
         if (!readyToTrack.value) return;
         const bounds = canvas.value.getBoundingClientRect();
@@ -110,11 +121,14 @@ onMounted(() => {
 
       animate();
 
-      function animate() {
+      function animate(time) {
         requestAnimationFrame(animate);
 
-        obj.rotation.y += (targetRotation.y - obj.rotation.y) * 0.1;
-        obj.rotation.x += (targetRotation.x - obj.rotation.x) * 0.1;
+        time *= 0.001;
+
+        obj.rotation.x = time * 0.6;
+        obj.rotation.y = time * 0.8;
+        obj.rotation.z = time * 0.4;
 
         camera.position.z = zoom;
         renderer.render(scene, camera);

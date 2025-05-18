@@ -40,7 +40,10 @@
           velit tempor culpa.
         </AnimatedText>
       </div>
-      <div ref="callRef" class="absolute right-[-110px] top-[-210px] z-10">
+      <div
+        ref="callRef"
+        class="absolute lg:right-[-110px] lg:top-[-210px] right-[-50px] top-[-150px] z-10"
+      >
         <titleText text="CALL" textColor="text-white " fontSize="text-M/DIS1" />
       </div>
       <div ref="meRef" class="absolute left-[-20px] bottom-[-15px]">
