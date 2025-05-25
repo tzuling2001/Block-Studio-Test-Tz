@@ -51,18 +51,25 @@ const splitText = computed(() => {
 });
 
 onMounted(() => {
-  gsap.to(charRefs, {
-    opacity: 1,
-    y: 0,
-    duration: 0.3,
-    stagger: 0.05,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: wrapper.value,
-      start: "top 90%",
-      end: "top 60%",
-      scrub: true,
+  gsap.fromTo(
+    charRefs,
+    {
+      opacity: 0,
+      y: 40,
     },
-  });
+    {
+      opacity: 1,
+      y: 0,
+      duration: 0.3,
+      stagger: 0.05,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: wrapper.value,
+        start: "top 90%",
+        end: "top 50%",
+        toggleActions: "play none none reverse",
+      },
+    }
+  );
 });
 </script>

@@ -3,7 +3,9 @@
     class="w-full bg-white py-20 px-10 flex lg:flex-row flex-col gap-2 justify-between items-center"
   >
     <!-- lineBox  -->
-    <div class="lineBox w-full flex gap-2 w-max items-center order-2">
+    <div
+      class="lineBox w-full flex gap-2 w-max items-center justify-center order-2"
+    >
       <button class="font-logo text-red text-D/B2 hover:text-green">
         Privacy Policy
       </button>
